@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join me on Suvidha</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;padding:32px 20px;max-width:420px;margin-inline:auto;color:#1b1b1b;background:#fafaf7}
+  h1{font-size:22px;margin:0 0 8px} p{line-height:1.5;color:#555}
+  a.btn{display:block;text-align:center;padding:14px;border-radius:12px;background:#1f7a4d;color:#fff;text-decoration:none;font-weight:600;margin:12px 0}
+  a.alt{background:#fff;color:#1f7a4d;border:1px solid #1f7a4d}
+  @media (prefers-color-scheme:dark){body{background:#111;color:#eee}p{color:#aaa}a.alt{background:#111}}
+</style>
+</head>
+<body>
+<h1 id="title">Join me on Suvidha</h1>
+<p>Split expenses with friends. Private, and it works offline.</p>
+<a class="btn" id="install" href="#">Get the app</a>
+<a class="btn alt" id="open" href="#">I already have the app</a>
+<script>
+  var params = new URLSearchParams(location.search);
+  var id = params.get("id") || "";
+  var name = (params.get("name") || "").slice(0, 60);
+  if (!/^[0-9a-fA-F]{64}$/.test(id)) {
+    document.getElementById("install").href = "https://play.google.com/store/apps/details?id=com.just_sri.suvidhaapp";
+    document.getElementById("open").style.display = "none";
+  } else {
+    if (name) document.getElementById("title").textContent = name + " invited you to Suvidha";
+    var referrer = "id=" + id.toLowerCase() + (name ? "&name=" + encodeURIComponent(name) : "");
+    document.getElementById("install").href =
+      "https://play.google.com/store/apps/details?id=com.just_sri.suvidhaapp&referrer=" + encodeURIComponent(referrer);
+    document.getElementById("open").href = location.href;
+  }
+</script>
+</body>
+</html>
