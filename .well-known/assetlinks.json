@@ -4,7 +4,7 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.just_sri.suvidhaapp",
-      "sha256_cert_fingerprints": ["REPLACE_WITH_PLAY_APP_SIGNING_SHA256"]
+      "sha256_cert_fingerprints": ["FD:94:A2:DF:D1:74:F5:F7:4A:6A:CC:91:97:E0:FE:17:82:05:DC:B4:15:8D:D8:B5:E0:7A:6A:6A:23:D7:37:8A"]
     }
   }
 ]

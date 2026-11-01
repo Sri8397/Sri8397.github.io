@@ -29,7 +29,9 @@
     var referrer = "id=" + id.toLowerCase() + (name ? "&name=" + encodeURIComponent(name) : "");
     document.getElementById("install").href =
       "https://play.google.com/store/apps/details?id=com.just_sri.suvidhaapp&referrer=" + encodeURIComponent(referrer);
-    document.getElementById("open").href = location.href;
+    // Use the app's custom scheme: an HTTPS link to this page just reloads it
+    // when Android App Links verification is unavailable or still pending.
+    document.getElementById("open").href = "suvidha://invite?" + referrer;
   }
 </script>
 </body>
